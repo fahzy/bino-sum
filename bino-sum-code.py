@@ -10,14 +10,19 @@ args = parser.parse_args()
 
 if args.textfile:
 
-    name: str = str(args.texfile)
+    name: str = str(args.textfile)
     f = open(name,"r")
+    line: str = f.readline()
+    
+    if not line:
+        print("Number of test cases needed")
+        exit()
 
-    test_cases: int = int(f.readline())
+    test_cases: int = int(line)
 
     sum: int = 0
     DENOMINATOR: int = 1000000007
-    T, N, P :int = 0, 0, 0
+    T, N, P = (0, 0, 0)
     line: str = ""
 
     for x in range(test_cases):
@@ -34,7 +39,7 @@ if args.textfile:
             print("T cannot be less than 1 nor can it be greater than 1000")
             continue
 
-
+        
 
 
 
@@ -43,3 +48,5 @@ if args.textfile:
     
 else:
     print("Textfile name not given, cannot perform operation.")
+
+# if __name__ == "__main__":

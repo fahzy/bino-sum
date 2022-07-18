@@ -3,6 +3,7 @@ import argparse
 def function_F(N: int, P: int):
     if P == 0: return 1
 
+    
     subsets: list = []
 
     for x in range(1, N+1):
